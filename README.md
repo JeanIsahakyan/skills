@@ -18,27 +18,36 @@ codebase. Project-specific skills live with their project; portable ones live he
 
 ## Install
 
-### As a plugin (recommended)
+**This repo *is* the marketplace.** There's nothing to upload anywhere — a Claude Code
+"marketplace" is just a git repo with a `.claude-plugin/marketplace.json`. Pushing to
+GitHub is publishing; installing means pointing Claude Code at this repo.
 
-This repo is a Claude Code plugin marketplace. Install everything in one go:
+### As a plugin (recommended)
 
 ```
 /plugin marketplace add JeanIsahakyan/skills
-/plugin install ji-skills@jeanisahakyan-skills
+/plugin install skills@jeanisahakyan
 ```
 
-That registers the marketplace and installs the `ji-skills` plugin (which bundles all
-the skills under `skills/`). Updates land with `/plugin marketplace update jeanisahakyan-skills`.
+First line registers this repo as a marketplace (Claude Code clones it and reads
+`.claude-plugin/marketplace.json`); second installs the `skills` plugin from it — which
+bundles every skill under `plugin/skills/`. After the marketplace is added you can also
+just run `/plugin install skills`. Pull updates with `/plugin marketplace update jeanisahakyan`.
 
-### Manually (single skill)
+> The `skills@jeanisahakyan` form is `<plugin-name>@<marketplace-name>` — `skills` is the
+> plugin (`plugin/.claude-plugin/plugin.json`), `jeanisahakyan` is the marketplace
+> (`.claude-plugin/marketplace.json` → `name`). They're separate names by design, not the
+> `owner/repo` GitHub path.
+
+### Manually (single skill, no plugin system)
 
 Copy (or symlink) one skill directory into your agent's skills folder
 (`~/.claude/skills/` for Claude Code):
 
 ```bash
-cp -r skills/autopilot ~/.claude/skills/autopilot
+cp -r plugin/skills/autopilot ~/.claude/skills/autopilot
 # or, to keep it in sync with this repo:
-ln -s "$(pwd)/skills/autopilot" ~/.claude/skills/autopilot
+ln -s "$(pwd)/plugin/skills/autopilot" ~/.claude/skills/autopilot
 ```
 
 The agent picks it up automatically; the skill's `description` decides when it
@@ -48,20 +57,21 @@ triggers.
 
 | Skill | What it does |
 |-------|--------------|
-| [`autopilot`](skills/autopilot/) | Universal autonomous feature/project builder — turns ~one prompt into a whole working, tested feature without asking questions, refusing to build the wrong/redundant thing up front (premise gate) and surfacing the irreversible decisions + honest verification claims at the end. Validated against evals (see the skill's `evals/`). |
+| [`autopilot`](plugin/skills/autopilot/) | Universal autonomous feature/project builder — turns ~one prompt into a whole working, tested feature without asking questions, refusing to build the wrong/redundant thing up front (premise gate) and surfacing the irreversible decisions + honest verification claims at the end. Validated against evals (see the skill's `evals/`). |
 
 ## Adding a skill
 
 This is a growing collection — new skills land over time. To add one:
 
-1. Create `skills/<name>/SKILL.md` (plus optional `references/` and `evals/`).
+1. Create `plugin/skills/<name>/SKILL.md` (plus optional `references/` and `evals/`).
 2. Append a row to the **Skills** table above.
 3. Commit and push.
 
-That's it. Skills are auto-discovered under `skills/`, so they ship in the `ji-skills`
-plugin automatically — **no `.claude-plugin/` manifest edits per skill.** The README
-table is the single living list of what's here. Bump `version` in
-`.claude-plugin/plugin.json` when you want a release marker for `/plugin marketplace update`.
+That's it. Skills are auto-discovered under `plugin/skills/`, so they ship in the
+`skills` plugin automatically — **no `.claude-plugin/` manifest edits per skill.** The
+README table is the single living list of what's here. Bump `version` in
+`plugin/.claude-plugin/plugin.json` when you want a release marker for
+`/plugin marketplace update`.
 
 ## Notes
 
