@@ -1,13 +1,15 @@
 # CLAUDE.md
 
-Guidance for Claude Code (claude.ai/code) when working in this repository.
+Guidance for AI coding agents working in this repository. (`CLAUDE.md` is just the
+conventional filename an agent auto-loads — the guidance itself is agent-neutral.)
 
 ## What this repo is
 
-A collection of **custom, portable Claude Code skills**. Each skill is a directory
+A collection of **custom, portable AI-agent skills**. Each skill is a directory
 with a `SKILL.md` entry point, optional `references/` (progressive-disclosure docs)
 and `evals/` (test prompts). The source of truth lives here; skills are installed by
-copying or symlinking into `~/.claude/skills/`.
+copying or symlinking into the agent's skills location (`~/.claude/skills/` for
+Claude Code).
 
 ### Skill conventions
 
@@ -49,8 +51,8 @@ work remaining.
 
 ### Communication style
 
-- Respond in **Russian by default**; keep technical terms as-is (skill, eval,
-  prompt, frontmatter, PR, CI, token).
+- **Always respond in the language the user writes in.** Keep technical terms as-is
+  (skill, eval, prompt, frontmatter, PR, CI, token).
 - Skip social niceties ("great question", "hope this helps", "great point").
 - Skip softening hedges when actually confident — "do X", not "maybe consider X".
 - Disagree explicitly when disagreeing; don't soften with "interesting approach,
