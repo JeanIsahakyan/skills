@@ -1,13 +1,13 @@
 {
   "name": "jeanisahakyan-skills",
   "owner": {
-    "name": "Jean Isahakyan"
+    "name": "Zhan Isaakian"
   },
   "plugins": [
     {
       "name": "ji-skills",
       "source": "./",
-      "description": "Jean Isahakyan's custom AI-agent skills. Currently bundles autopilot — a universal autonomous feature/project builder (premise gate up front, full-vertical autonomous build, salience-ranked honest disclosure at the end)."
+      "description": "Zhan Isaakian's custom AI-agent skills. Currently bundles autopilot — a universal autonomous feature/project builder (premise gate up front, full-vertical autonomous build, salience-ranked honest disclosure at the end)."
     }
   ]
 }

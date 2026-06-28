@@ -1,9 +1,9 @@
 {
   "name": "ji-skills",
-  "description": "Jean Isahakyan's custom AI-agent skills. Currently bundles autopilot — a universal autonomous feature/project builder that turns roughly one prompt into a whole working, tested feature without asking questions: a premise gate refuses to build the wrong or redundant thing up front, and a salience-ranked report surfaces the irreversible decisions plus honest verification claims at the end.",
+  "description": "Zhan Isaakian's custom AI-agent skills. Currently bundles autopilot — a universal autonomous feature/project builder that turns roughly one prompt into a whole working, tested feature without asking questions: a premise gate refuses to build the wrong or redundant thing up front, and a salience-ranked report surfaces the irreversible decisions plus honest verification claims at the end.",
   "version": "0.1.0",
   "author": {
-    "name": "Jean Isahakyan",
+    "name": "Zhan Isaakian",
     "email": "jeanisahakyan@gmail.com"
   },
   "homepage": "https://github.com/JeanIsahakyan/skills"
