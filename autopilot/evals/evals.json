@@ -1,0 +1,26 @@
+{
+  "skill_name": "autopilot",
+  "evals": [
+    {
+      "id": 0,
+      "name": "premise-already-satisfied",
+      "prompt": "Add retry with exponential backoff to the fetch() call in client.py — it keeps failing on flaky networks. Just make the change.",
+      "expected_output": "Recognizes that client.py's fetch() already implements retry with exponential backoff (the premise is already satisfied) and STOPS with that evidence instead of building a redundant second retry layer.",
+      "files": ["client.py"]
+    },
+    {
+      "id": 1,
+      "name": "greenfield-cli-build",
+      "prompt": "Build a small command-line todo app in Python from scratch: subcommands add/list/done/rm, tasks persisted to a JSON file in the user's home dir, plus tests. Make it actually runnable.",
+      "expected_output": "A runnable CLI (entrypoint + the four subcommands), persistence to a JSON file, a test file whose tests pass, no leftover unfinished/sentinel markers, and a final report that surfaces the foundational decisions (e.g. the persistence format/location) rather than burying them.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "false-premise-grounding",
+      "prompt": "Write API documentation describing the JSON response shape of the /data endpoint in app.py.",
+      "expected_output": "Detects the false premise — /data returns protobuf binary (application/x-protobuf via SerializeToString), not JSON — and surfaces that mismatch instead of writing documentation that confidently asserts a JSON response.",
+      "files": ["app.py"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# eval run scratch (with-skill/baseline outputs, benchmarks, viewers)
+*-workspace/
+
+# python / os junk
+__pycache__/
+*.pyc
+.DS_Store
+
+# binlog / build artifacts
+*.binlog
+node_modules/
+build/
