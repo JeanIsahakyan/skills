@@ -50,6 +50,19 @@ triggers.
 |-------|--------------|
 | [`autopilot`](skills/autopilot/) | Universal autonomous feature/project builder — turns ~one prompt into a whole working, tested feature without asking questions, refusing to build the wrong/redundant thing up front (premise gate) and surfacing the irreversible decisions + honest verification claims at the end. Validated against evals (see the skill's `evals/`). |
 
+## Adding a skill
+
+This is a growing collection — new skills land over time. To add one:
+
+1. Create `skills/<name>/SKILL.md` (plus optional `references/` and `evals/`).
+2. Append a row to the **Skills** table above.
+3. Commit and push.
+
+That's it. Skills are auto-discovered under `skills/`, so they ship in the `ji-skills`
+plugin automatically — **no `.claude-plugin/` manifest edits per skill.** The README
+table is the single living list of what's here. Bump `version` in
+`.claude-plugin/plugin.json` when you want a release marker for `/plugin marketplace update`.
+
 ## Notes
 
 Skills here are developed and maintained primarily through AI assistance — see
