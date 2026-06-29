@@ -1,7 +1,7 @@
 {
   "name": "skills",
   "description": "Zhan Isaakian's growing collection of custom AI-agent skills, each hand-built and iterated against real evals. Installing this plugin makes every skill in the collection available; see the repo README for the current list and what each does.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": {
     "name": "Zhan Isaakian",
     "email": "jeanisahakyan@gmail.com"
