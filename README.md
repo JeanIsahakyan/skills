@@ -58,6 +58,7 @@ triggers.
 | Skill | What it does |
 |-------|--------------|
 | [`autopilot`](plugin/skills/autopilot/) | Universal autonomous feature/project builder — turns ~one prompt into a whole working, tested feature without asking questions, refusing to build the wrong/redundant thing up front (premise gate) and surfacing the irreversible decisions + honest verification claims at the end. Validated against evals (see the skill's `evals/`). |
+| [`spec`](plugin/skills/spec/) | Turn a fuzzy product idea into a precise **SPEC.md / PRD before any code** — by interviewing you with plain-language *product* questions only and deriving every technical decision from the existing codebase (never asking a tech question). Output is one file with a hard wall: narrative product behaviour on top, a derived technical appendix sealed at the bottom. Runs codebase-context → product-interview loop → spec-writer. Pairs naturally with `simulate` (spec it → simulate it). Generalized from a production feature pipeline's spec stage. |
 | [`simulate`](plugin/skills/simulate/) | Stress-test a spec / design doc **before** writing code by mentally executing it as every component at once — data stores, services, clients, external systems — running golden / edge / adversarial scenarios with explicit state diffs, looped autonomously (spec-analyzer → parallel simulators → findings-aggregator) until findings settle to LOW. Produces a deduped, severity-ranked `FINDINGS.md`. Generalized from a production feature pipeline's spec-simulation stage. |
 
 ## Adding a skill
